@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <MSBuildFileVersion>17.9.8.16306</MSBuildFileVersion>
+    <MSBuildSemanticVersion>17.9.8+b34f75857</MSBuildSemanticVersion>
+    <MSBuildExtensionsPath32>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild</MSBuildExtensionsPath32>
+    <MSBuildExtensionsPath>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild</MSBuildExtensionsPath>
+    <MSBuildToolsPath32>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin</MSBuildToolsPath32>
+    <MSBuildToolsPath64>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64</MSBuildToolsPath64>
+    <MSBuildSDKsPath>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks</MSBuildSDKsPath>
+    <FrameworkSDKRoot />
+    <MSBuildRuntimeVersion>4.0.30319</MSBuildRuntimeVersion>
+    <MSBuildFrameworkToolsPath>C:\Windows\Microsoft.NET\Framework\v4.0.30319\</MSBuildFrameworkToolsPath>
+    <MSBuildFrameworkToolsPath32>C:\Windows\Microsoft.NET\Framework\v4.0.30319\</MSBuildFrameworkToolsPath32>
+    <MSBuildFrameworkToolsPath64>C:\Windows\Microsoft.NET\Framework64\v4.0.30319\</MSBuildFrameworkToolsPath64>
+    <MSBuildFrameworkToolsPathArm64>C:\Windows\Microsoft.NET\FrameworkArm64\v4.0.30319\</MSBuildFrameworkToolsPathArm64>
+    <MSBuildFrameworkToolsRoot>C:\Windows\Microsoft.NET\Framework\</MSBuildFrameworkToolsRoot>
+    <SDK35ToolsPath />
+    <SDK40ToolsPath />
+    <WindowsSDK80Path />
+    <VsInstallRoot>C:\Program Files\Microsoft Visual Studio\2022\Community</VsInstallRoot>
+    <MSBuildToolsRoot>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild</MSBuildToolsRoot>
+    <RoslynTargetsPath>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Roslyn</RoslynTargetsPath>
+    <VCTargetsPath>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\</VCTargetsPath>
+    <VCTargetsPath14>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\</VCTargetsPath14>
+    <VCTargetsPath12>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\</VCTargetsPath12>
+    <VCTargetsPath11>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\</VCTargetsPath11>
+    <VCTargetsPath10>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\</VCTargetsPath10>
+    <AndroidTargetsPath>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\MDD\Android\V150\</AndroidTargetsPath>
+    <iOSTargetsPath>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\MDD\iOS\V150\</iOSTargetsPath>
+    <_DirectorySolutionPropsFile>Directory.Solution.props</_DirectorySolutionPropsFile>
+    <_DirectorySolutionPropsBasePath />
+    <AspNetConfiguration>Release</AspNetConfiguration>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <_DirectorySolutionTargetsFile>Directory.Solution.targets</_DirectorySolutionTargetsFile>
+    <_DirectorySolutionTargetsBasePath />
+    <MSBuildAllProjects>C:\Unity Projects\KaleyEbertTankMazeLevel\WebGLBuild\KaleyEbertTankMazeLevel.sln.metaproj</MSBuildAllProjects>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Unity Projects\KaleyEbertTankMazeLevel\WebGLBuild\Il2CppOutputProject\Il2CppOutputProject.vcxproj">
+      <AdditionalProperties>Configuration=Release; Platform=x64</AdditionalProperties>
+      <Platform>x64</Platform>
+      <Configuration>Release</Configuration>
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="Clean">
+    <MSBuild BuildInParallel="True" Projects="@(ProjectReference-&gt;Reverse())" Targets="Clean" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="True" Projects="C:\Unity Projects\KaleyEbertTankMazeLevel\WebGLBuild\KaleyEbertTankMazeLevel\KaleyEbertTankMazeLevel.vcxproj" Targets="Clean" Properties="Configuration=Release; Platform=x64;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="Build" Outputs="@(KaleyEbertTankMazeLevelBuildOutput)">
+    <MSBuild BuildInParallel="True" Projects="@(ProjectReference)" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="True" Projects="C:\Unity Projects\KaleyEbertTankMazeLevel\WebGLBuild\KaleyEbertTankMazeLevel\KaleyEbertTankMazeLevel.vcxproj" Properties="Configuration=Release; Platform=x64;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="KaleyEbertTankMazeLevelBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Rebuild" Outputs="@(KaleyEbertTankMazeLevelBuildOutput)">
+    <MSBuild BuildInParallel="True" Projects="@(ProjectReference)" Targets="Rebuild" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="True" Projects="C:\Unity Projects\KaleyEbertTankMazeLevel\WebGLBuild\KaleyEbertTankMazeLevel\KaleyEbertTankMazeLevel.vcxproj" Targets="Rebuild" Properties="Configuration=Release; Platform=x64;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="KaleyEbertTankMazeLevelBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Publish">
+    <MSBuild BuildInParallel="True" Projects="@(ProjectReference)" Targets="Publish" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="True" Projects="C:\Unity Projects\KaleyEbertTankMazeLevel\WebGLBuild\KaleyEbertTankMazeLevel\KaleyEbertTankMazeLevel.vcxproj" Targets="Publish" Properties="Configuration=Release; Platform=x64;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+</Project>
